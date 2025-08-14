@@ -1,0 +1,449 @@
+{
+	"info": {
+		"_postman_id": "615e03e9-1279-4f0d-94cc-7ca107dabc81",
+		"name": "StudentAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28462085",
+		"_collection_link": "https://erisp-team.postman.co/workspace/Erisp.net~657b91a8-72bd-4332-aa9a-017260b82689/collection/28462085-615e03e9-1279-4f0d-94cc-7ca107dabc81?action=share&source=collection_link&creator=28462085"
+	},
+	"item": [
+		{
+			"name": "userlogin",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "adminadminw1",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "16",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "wad1min@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "software engineering",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"admin@gmail.com\",\n    \"password\":\"123\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "admin@gmail.com",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWQ1NGY4MTFkM2VhYzQzOGIzYWE1NSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzU1MTc2MzM3LCJleHAiOjE3NTUxNzcyMzd9.syiYpuSoX53XFBoA0EaPnqai_9gTNuy3er9IqVhX7Jk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWQ1NGY4MTFkM2VhYzQzOGIzYWE1NSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzU1MTc2MzM3LCJleHAiOjE3NTU3ODExMzd9.SbE4-7AvA9LVTQ_Z-t7Fmx1q5HXKiIy3V-BjWGKobaE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/logout",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWQ1NGY4MTFkM2VhYzQzOGIzYWE1NSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzU1MTQxMzkwLCJleHAiOjE3NTUxNDIyOTB9.9Saru03yntiysPCS_ObU1k9JfbwGEpHRTwELTPJIrYM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWQ1NGY4MTFkM2VhYzQzOGIzYWE1NSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzU1MTYzOTA2LCJleHAiOjE3NTU3Njg3MDZ9.Si61yrfVvJRMvPQq3g68wS1l79ju7WlgxUBIaSfqMFA\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/refresh",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show all users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWQ1NGY4MTFkM2VhYzQzOGIzYWE1NSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzU1MTQxMzkwLCJleHAiOjE3NTUxNDIyOTB9.9Saru03yntiysPCS_ObU1k9JfbwGEpHRTwELTPJIrYM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Created student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWQ1NGY4MTFkM2VhYzQzOGIzYWE1NSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzU1MTc3MTgwLCJleHAiOjE3NTUxNzgwODB9.dh54HuO43F92rwZuckyqX9umBNSWRN27wiZXA7YC4Fg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": " {{$randomFirstName}}",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": " 23",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{$randomEmail}}",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": " Software Engineering",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "postman-cloud:///1eff5a5b-c06b-45a0-9581-ebe72791042b"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/students",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWQ1NGY4MTFkM2VhYzQzOGIzYWE1NSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzU1MTc1MjUwLCJleHAiOjE3NTUxNzYxNTB9.6UoD-trs8ujR6E8Wfm0sL79QsoLY_3eaFgyUGtcTfDw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/students",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nameq",
+									"value": "hilal",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/students/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"students",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update student",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": " {{$randomFirstName}}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "age",
+									"value": " 12",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{$randomEmail}}",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": " Software Engineering",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "postman-cloud:///1eff5f06-9ea3-4e90-b0ab-f3f2929dbe12"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/students/6898fb00c6fba1e396726260",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"students",
+								"6898fb00c6fba1e396726260"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"ww Dowwwe\",\n  \"age\": 25,\n  \"email\": \"john.doww1e@example.com\",\n  \"course\": \"Computer Science\",\n  \"profilePicture\": \"https://example.com/images/john-doe.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/students/6898fb02c6fba1e396726262",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"students",
+								"6898fb02c6fba1e396726262"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:3000/api",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OTk2ZjlkYTFlMGU3YzY2NDgyZWVjZSIsInVzZXJuYW1lIjoiaGlsYWxhaG1hZCIsImlhdCI6MTc1NDkzOTY1OCwiZXhwIjoxNzU1MDI2MDU4fQ.R4OHV1SfXeN-SKkFQswVyac0reFQ-4w6t4P-dBg3b2s",
+			"type": "string"
+		}
+	]
+}

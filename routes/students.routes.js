@@ -9,7 +9,7 @@ router.post('/students', upload.single('profilePicture'), processImage, studentC
 router.put('/students:id', upload.single('profilePicture'), processImage, studentController.updateStudent);
 
 router.get('/students', studentController.getStudents);
-router.get('/student:id', studentController.getStudent);
-router.delete('/student:id', studentController.deleteStudent);
+router.get('/students:id', studentController.getStudent);
+router.delete('/students:id', studentController.deleteStudent);
 
 export default router;
